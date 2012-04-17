@@ -74,14 +74,14 @@ module Checkout
         @access
       end
     end
-    
+
     def access_label(user)
       case access_rw(user)
-        when 'read+write': :label_access_read_write
-        when 'read-only': :label_access_read_only
+      when 'read+write' then :label_access_read_write
+      when 'read-only'  then :label_access_read_only
       end
     end
-  
+
     def fixed_url
       @fixed_url.present? ? @fixed_url : begin
         if (regex.blank? || regex_replacement.blank?)
